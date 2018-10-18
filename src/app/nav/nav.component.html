@@ -1,0 +1,9 @@
+<div class="content-area">
+    <router-outlet></router-outlet>
+</div>
+<clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" id="side-navbar">
+    <a clrVerticalNavLink *ngFor="let menu of menuItems" routerLinkActive="active" [routerLink]="menu.link">
+        <clr-icon clrVerticalNavIcon shape="list"></clr-icon>
+        {{menu.caption}}
+    </a>
+</clr-vertical-nav>

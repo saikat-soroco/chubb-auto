@@ -1,0 +1,36 @@
+<div class="main-container">
+  <header class="header-6">
+    <div class="branding">
+      <a href="/dashboard">
+        <img class="logo" [src]="logo">
+      </a>
+    </div>
+    <div class="header-nav">
+      <a class="nav-link">
+        <span class="nav-text">Auto Dashboard</span>
+      </a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger>
+          {{user}}
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="..." clrDropdownItem>Preferences</a>
+          <a href="..." clrDropdownItem>Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </header>
+  <nav class="subnav">
+    <ul class="nav">
+      <li *ngFor="let link of links" class="nav-item">
+        <a class="nav-link" (click)="currentLink=link" [class.active]="currentLink==link">
+          {{link}}
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <app-nav [link]="currentLink"></app-nav>
+</div>

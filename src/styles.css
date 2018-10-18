@@ -1,0 +1,87 @@
+/* You can add global styles to this file, and also import other style files */
+
+.clr-vertical-nav .nav-trigger+.nav-content {
+    height: 100vh;
+}
+
+.main-container .content-area {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.datagrid .datagrid-body .datagrid-row {
+    cursor: pointer;
+}
+
+.datagrid-scroll-wrapper {
+    max-width: calc(100vw - 280px);
+}
+
+.datagrid .datagrid-foot {
+    justify-content: normal;
+}
+
+.datagrid-overlay-wrapper::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.datagrid-overlay-wrapper::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+    height: 9px;
+}
+
+.datagrid-overlay-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #55555524;
+}
+
+.datagrid-overlay-wrapper::-webkit-scrollbar-thumb:hover {
+    border-radius: 4px;
+    background-color: #55555569;
+}
+
+.datagrid .datagrid-body {
+    overflow-y: visible;
+}
+
+#rest-col-container .datagrid-foot-description,
+#rest-col-container .pagination {
+    position: absolute;
+}
+
+#rest-col-container .pagination {
+    left: 95px;
+}
+
+.datagrid .datagrid-body .datagrid-row:hover .datagrid-cell {
+    background: #eee;
+    border: none;
+}
+
+#details-toggle.toggle-switch input[type=checkbox]:checked+label:before {
+    border-color: #055781;
+    background-color: #055781;
+}
+
+
+
+.nv-controlsWrap.nvd3-svg {
+    display: none;
+}
+
+.tick.zero:not(:first-child) {
+    opacity: 0 !important;
+}
+.nv-axislabel{
+    fill: rgb(197, 197, 197);
+}
+
+/* .tick text{
+    display: none;
+} */

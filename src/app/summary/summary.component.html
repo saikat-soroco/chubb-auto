@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Activity Summary</h3>
+    <br>
+
+    <div class="row">
+      <div class="col-md-12">
+        <label>Processing Date</label>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <span>From</span>
+            <input #dateInputFrom type="date" clrDate [(ngModel)]="dateFrom" (ngModelChange)="onDateFromChange($event)">
+          </div>
+
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <span>To</span>
+            <input #dateInputTo type="date" clrDate [(ngModel)]="dateTo" (ngModelChange)="onDateToChange($event)">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-7">
+        <div class="container-one gutter-top">
+          <ng-container *ngFor='let stat of basicStatsList'>
+            <app-stats-tag [value]="stat.value" [label]="stat.label"></app-stats-tag>
+          </ng-container>
+        </div>
+
+        <br>
+        <div class="container-two">
+          <ng-container *ngFor='let stat of queryStatsList'>
+            <app-stats-tag1 [value]="stat.value" [label]="stat.label"></app-stats-tag1>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <nvd3 *ngIf="!isStatsLoading" [options]="statsPieChartOpts" [data]="statsPieChartData"></nvd3>
+        <div *ngIf="isStatsLoading" class="spinner-wrpr">
+          <span class="spinner spinner-md">
+            Loading...
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gutter-top">
+      <div class="col-xs-12 col-md-4">
+        <div class="container">
+          <h4>Endorsement status</h4>
+          <nvd3 *ngIf="!isWorkOrderLoading" [options]="histogramOptions" [data]="histogramData"></nvd3>
+          <div *ngIf="isWorkOrderLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="container" id="handling_time">
+          <h4>Average handling time</h4>
+          <nvd3 *ngIf="!isAvgTimeLoading" [options]="handlingTimeOptions" [data]="handlingTimeData"></nvd3>
+          <div *ngIf="isAvgTimeLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <div class="container">
+          <h4 class="af-tooltip">Automation factor (AF)<span class="af-tooltiptext">Formula used: Completed + Kicked out / Total number of cases</span></h4>
+          <nvd3 *ngIf="!isWorkOrderLoading" [options]="AFOptions" [data]="AFData"></nvd3>
+          <div *ngIf="isWorkOrderLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gutter-top" *ngIf="_commonService.getContext()=='Prerate'">
+      <div class="col-xs-12 col-md-4">
+        <div class="container">
+          <h4>Work order creation status</h4>
+          <nvd3 *ngIf="!isWorkOrderLoading" [options]="histogramOptions" [data]="histogramData"></nvd3>
+          <div *ngIf="isWorkOrderLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+        <div class="container" id="handling_time">
+          <h4>Average handling time</h4>
+          <nvd3 *ngIf="!isAvgTimeLoading" [options]="handlingTimeOptions" [data]="handlingTimeData"></nvd3>
+          <div *ngIf="isAvgTimeLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+        <div class="container">
+          <h4>Automation factor (AF)</h4>
+          <nvd3 *ngIf="!isWorkOrderLoading" [options]="AFOptions" [data]="AFData"></nvd3>
+          <div *ngIf="isWorkOrderLoading" class="spinner-wrpr">
+            <span class="spinner spinner-md">
+              Loading...
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row" *ngIf="_commonService.getContext()=='Prerate'">
+
+
+      <!-- <div class="col-md-4">
+        <div class="container" id="handling_time">
+          <h4>Average post processing time</h4>
+          <nvd3 [options]="postProcessingTimeOptions" [data]="postProcessingTimeData"></nvd3>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- <div class="row" *ngIf="_commonService.getContext()=='CE'">
+      <div class="col-md-12">
+        <app-table tableTitlePrefix="Current day - Work Order Status for "></app-table>
+      </div>
+    </div> -->
+  </div>

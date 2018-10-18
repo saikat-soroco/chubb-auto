@@ -1,0 +1,226 @@
+table {
+    border: none;
+}
+
+thead th {
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    vertical-align: middle;
+}
+
+tbody {
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+tr:last-of-type td {
+    border-bottom: 1px solid #ddd;
+}
+
+tr>td:first-of-type {
+    border-left: 1px solid #ddd;
+}
+
+tr>td:last-of-type {
+    border-right: 1px solid #ddd;
+}
+
+.row-details img {
+    height: 150px;
+    margin: 0 30px;
+    float: left;
+}
+
+.row-details {
+    float: left;
+    width: 50%;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.table-options {
+    margin-top: 20px;
+    height: 40px;
+}
+
+/* .row-details:last-of-type{
+    width: 50%;
+
+  } */
+
+.row-details>div {
+    margin: 8px 0px;
+}
+
+.row-details>button {
+    border: none;
+    background: none;
+    border: 2px solid #007CBB;
+    color: #007CBB;
+    padding: 5px 10px;
+    border-radius: 3px;
+    float: left;
+    margin-top: 10px;
+}
+
+.row-details>button:hover {
+    border-color: #00a1f3;
+    color: #00a1f3;
+    cursor: pointer;
+}
+
+.row-details ol {
+    margin: 20px 0;
+}
+
+.boldened-text {
+    font-weight: bold;
+}
+
+.row-details ol li {
+    margin-top: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+textarea {
+    height: 60px;
+    width: 80%;
+    resize: none;
+    background: #f7f7f7;
+    margin-top: 5px;
+}
+
+button {
+    border: none;
+    background: #007CBB;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 2px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    float: right;
+}
+
+button:hover {
+    background: #00a1f3;
+}
+
+.add-button {
+    color: #007CBB;
+    margin-left: 2%
+}
+
+.add-button:hover {
+    color: #00a1f3;
+}
+
+.menu-button {
+    float: right;
+    margin-right: 15px;
+    background-color: transparent;
+    color: #007CBB;
+    border: 1px solid #007CBB;
+    font-weight: bold;
+    padding: 0px 20px;
+}
+
+.menu-button:hover {
+    border: 1px solid #00a1f3;
+    color: #00a1f3;
+    background-color: transparent;
+}
+
+.table-menu {
+    height: 40px;
+}
+
+.highlight {
+    background: #f8f8f8;
+    box-shadow: inset 2px 0 8px #e2e2e2;
+}
+
+div.data-row {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+div.data-row>label {
+    display: inline-block;
+    width: 40%;
+}
+
+.searchHighlight {
+    background-color: #007cbb;
+    color: white;
+}
+
+.col0,
+.col1,
+.col2,
+.col3 {
+    background: #fff;
+    position: absolute;
+    width: 102px !important;
+    height: 98px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.col0.datagrid-column,
+.col1.datagrid-column,
+.col2.datagrid-column,
+.col3.datagrid-column {
+    height: 100px;
+    background-color: #fafafa;
+}
+
+.col {
+    height: 99px;
+}
+
+.col.datagrid-column {
+    background-color: #d9e4ea;
+}
+
+.init-col {
+    /* height: 40px; */
+}
+
+.init-col.datagrid-column {
+    background-color: #d9e4ea;
+}
+
+.col:first-of-type {
+    width: 1rem;
+}
+
+.col1 {
+    left: 102px;
+}
+
+.col2 {
+    left: 204px;
+}
+
+.col3 {
+    left: 306px;
+    border-right: 1px solid #eee;
+}
+
+.col4 {
+    margin-left: 396px;
+}
+
+#excel-download {
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: white;
+    background-color: #007cbb;
+    float: left;
+}

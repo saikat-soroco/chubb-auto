@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12" id="rest-col-container">
+    <clr-datagrid>
+      <clr-dg-column *ngFor="let col of keyCols;let i = index">
+        {{col}}
+        <clr-dg-string-filter [clrDgStringFilter]="columnFilters[keyColNames[i]]"></clr-dg-string-filter>
+      </clr-dg-column>
+      <clr-dg-row *clrDgItems="let row of displayRecordData;let i=index">
+        <clr-dg-cell *ngFor="let col of keyColNames;let j=index">
+          {{row[col]}}
+        </clr-dg-cell>
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} records
+        <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+.container {
+    text-align: center;
+    width: 90%;
+    border: 1px solid #ddd;
+    background: white;
+    -webkit-box-shadow: 4px 5px 6px 0px #9a9a9ae8;
+    box-shadow: 4px 5px 6px 0px #9a9a9ae8;
+    border: 1px solid rgb(189, 189, 189);
+}
+
+h4 {
+    margin-top: 0.5rem;
+}
+
+.gutter-top{
+    margin-top: 80px;
+}
+
+.spinner-wrpr{
+    height: 250px;
+    display: flex;
+    align-items: center;
+}
+.spinner-wrpr .spinner{
+    margin: auto;
+}
+
+
+.container-one{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-two{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*tooltip style*/
+
+.af-tooltiptext{
+    position: absolute;
+    top: -4.3rem;
+    left: 20px;;
+    background-color: #fff;
+    padding: 5px 5px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    -webkit-box-shadow: 4px 5px 6px 0px #9a9a9ae8;
+    box-shadow: 4px 5px 6px 0px #9a9a9ae8;
+    font-size: 15px;
+}
+
+.af-tooltiptext::after{
+    content:" ";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg) translate(0, -55%);
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+.af-tooltiptext::before{
+    content:" ";
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+    transform: rotate(45deg) translate(0, -55%);
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 4px 5px 6px 0px #9a9a9ae8;
+    z-index: -1;
+}
+
+.af-tooltip{
+    position: relative;
+    z-index: 500;
+}
+.af-tooltip .af-tooltiptext{
+    display: none;
+}
+
+.af-tooltip:hover .af-tooltiptext{
+    display: block;
+}

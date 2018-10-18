@@ -1,0 +1,16 @@
+.stats-tg{
+    display: block;
+    margin-right: 10px;
+    flex: 1;
+}
+.stats-tg .tg-value{
+    font-size: 18px;
+    margin-bottom: 2px;
+} 
+.stats-tg .tg-label{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid red; 
+    text-transform: capitalize;
+}

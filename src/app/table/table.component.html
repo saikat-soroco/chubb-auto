@@ -1,0 +1,56 @@
+<div class="row" *ngIf="datePicker == true">
+  <div class="col-md-12">
+    <label>Processing Date</label>
+  </div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <span>From</span>
+        <input #dateInputFrom type="date" clrDate [(ngModel)]="dateFrom" (ngModelChange)="onDateFromChange($event)">
+      </div>
+
+      <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <span>To</span>
+        <input #dateInputTo type="date" clrDate [(ngModel)]="dateTo" (ngModelChange)="onDateToChange($event)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h3>{{ tableTitlePrefix + _commonService.getContext() }}</h3>
+    <br>
+    <button id="excel-download" (click)="downloadData()">
+      Download as Excel
+    </button>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12" id="rest-col-container">
+        <clr-datagrid>
+          <!-- <clr-dg-column>Serial #</clr-dg-column> -->
+          <clr-dg-column *ngFor="let col of keyCols;let i = index">
+            {{col}}
+            <clr-dg-string-filter [clrDgStringFilter]="columnFilters[keyColNames[i]]"></clr-dg-string-filter>
+          </clr-dg-column>
+          <clr-dg-row *clrDgItems="let row of displayRecordData;let i=index">
+            <!-- <clr-dg-cell>{{row.index}}</clr-dg-cell> -->
+            <clr-dg-cell *ngFor="let col of keyColNames;let j=index">
+              {{row[col]}}
+            </clr-dg-cell>
+            <clr-dg-row-detail *clrIfExpanded>
+              <app-nested-table [id]="row['master_id']" style="width:100%;"></app-nested-table>
+            </clr-dg-row-detail>
+          </clr-dg-row>
+
+          <clr-dg-footer>
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}} of {{pagination.totalItems}} records
+            <clr-dg-pagination #pagination [clrDgPageSize]="10"></clr-dg-pagination>
+          </clr-dg-footer>
+        </clr-datagrid>
+      </div>
+
+    </div>
+  </div>
+</div>
